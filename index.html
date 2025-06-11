@@ -1,0 +1,136 @@
+<!DOCTYPE html>
+<html>
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>プッシュ通知 購読ページ</title>
+  <link rel="manifest" href="/manifest.json">
+  <style>
+    /* ページの基本的なスタイル */
+    body {
+      font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, "Helvetica Neue", Arial, sans-serif;
+      line-height: 1.6;
+      margin: 0;
+      padding: 20px;
+      background-color: #f8f9fa;
+      color: #333;
+    }
+    /* 全体を囲むコンテナ */
+    .container {
+      max-width: 700px;
+      margin: 0 auto;
+      background-color: #fff;
+      padding: 20px;
+      border-radius: 8px;
+      box-shadow: 0 2px 10px rgba(0,0,0,0.1);
+    }
+    h1 {
+      text-align: center;
+      color: #0056b3;
+    }
+    /* 購読ボタンのスタイル */
+    #subscribe-button {
+      display: block;
+      width: 100%;
+      padding: 15px;
+      font-size: 18px;
+      font-weight: bold;
+      color: white;
+      background-color: #007bff;
+      border: none;
+      border-radius: 5px;
+      cursor: pointer;
+      margin-bottom: 30px;
+      transition: background-color 0.2s;
+    }
+    #subscribe-button:hover {
+      background-color: #0056b3;
+    }
+    /* ナビゲーションカードのコンテナ */
+    .nav-links {
+        display: grid;
+        grid-template-columns: 1fr 1fr; /* 2つのカードを横並びに */
+        gap: 20px; /* カード間の隙間 */
+        margin-top: 30px; /* ★説明文との間に余白を追加 */
+    }
+    /* ナビゲーションカードのスタイル */
+    .nav-card {
+        display: block;
+        padding: 20px;
+        text-align: center;
+        border-radius: 8px;
+        background-color: #f8f9fa;
+        text-decoration: none;
+        color: #333;
+        font-weight: bold;
+        transition: transform 0.2s, box-shadow 0.2s;
+        border: 1px solid #ddd;
+    }
+    .nav-card:hover {
+        transform: translateY(-5px);
+        box-shadow: 0 4px 15px rgba(0,0,0,0.1);
+    }
+    .nav-card .emoji {
+        font-size: 24px;
+        display: block;
+        margin-bottom: 10px;
+    }
+    /* iPhone向け説明欄のスタイル */
+    .instructions {
+      margin-top: 20px;
+      padding: 15px;
+      background-color: #e9ecef;
+      border-left: 5px solid #007bff;
+    }
+    .instructions h2 {
+      margin-top: 0;
+      font-size: 18px;
+    }
+    .instructions p {
+      margin-bottom: 10px;
+    }
+    .instructions .note {
+      font-size: 14px;
+      color: #555;
+    }
+  </style>
+</head>
+<body>
+  <div class="container">
+    <h1>プッシュ通知 購読</h1>
+    <p style="text-align: center;">妻ケ丘男子バレー部保護者会に関する最新のお知らせを、プッシュ通知で受け取ることができます。</p>
+    <button id="subscribe-button">通知を購読する</button>
+
+    <div class="instructions">
+      <h2>🚩 iPhoneの方・通知購読がうまくいかない方</h2>
+      <p>お使いの環境によっては、以下の操作が必要な場合があります。</p>
+      <ol>
+        <li><strong>「通知を購読する」</strong>ボタンをタップします。</li>
+        <li>もし「ホーム画面に追加」の案内が出たら、それに従います。</li>
+        <li>
+          <strong>iPhoneの場合:</strong><br>
+          <span class="note">
+            共有ボタン（四角から上矢印が出ているアイコン）をタップし、メニューから「ホーム画面に追加」を選んでください。
+          </span>
+        </li>
+        <li>ホーム画面に追加された「通知アプリ」のアイコンをタップして起動し、その画面でもう一度<strong>「通知を購読する」</strong>ボタンをタップします。</li>
+        <li>「プッシュ通知の購読を開始しました！」というメッセージが出たら成功です。</li>
+      </ol>
+    </div>
+
+    <div class="nav-links">
+      <a href="https://sites.google.com/view/tsumagaoka-volley?usp=sharing" class="nav-card" target="_blank">
+        <span class="emoji">🏐</span>
+        ポータルサイトへ
+      </a>
+      <a href="https://sites.google.com/view/tsumagaoka-volley/%E9%80%9A%E7%9F%A5%E5%B1%A5%E6%AD%B4" class="nav-card" target="_blank">
+        <span class="emoji">📋</span>
+        過去の通知を見る
+      </a>
+    </div>
+
+  </div>
+
+  <script src="client.js"></script>
+</body>
+</html>

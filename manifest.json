@@ -1,0 +1,13 @@
+{
+  "name": "妻ケ丘男子バレー保護者会通知アプリ",
+  "short_name": "通知アプリ",
+  "start_url": "/",
+  "display": "standalone",
+  "icons": [
+    {
+      "src": "/icon.png",
+      "sizes": "192x192",
+      "type": "image/png"
+    }
+  ]
+}
