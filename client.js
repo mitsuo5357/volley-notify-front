@@ -1,7 +1,7 @@
 // client.js（修正版）
 
 // VAPIDの公開鍵（これはみっちゃんのキーのままでOK）
-const VAPID_PUBLIC_KEY = 'BMdUb5H41hCEHAOQiYxcH2bvvNJdmkIrtldYwNtVcjs7mQGkZpHhzfh-9sqioPB_nDbFt4ICIWsjiaz71B1JO48';
+const VAPID_PUBLIC_KEY = 'BPyWZ7rIFoN2YjOXtbsditKuWydFJ38tnrK_HjfXNofZicldcOzU7kY34v58lCDvgZGSznXq5YGwlsauikIbVOQ';
 
 const subscribeButton = document.getElementById('subscribe-button');
 
@@ -24,7 +24,7 @@ subscribeButton.addEventListener('click', async () => {
     console.log('プッシュ通知を購読しました:', subscription);
 
     // 4. 購読情報をサーバーに送信
-     await fetch('ここに後で設定するサーバーのURL/subscribe', {
+     await fetch('https://volley-notify-back.onrender.com/subscribe', {
       method: 'POST',
       body: JSON.stringify(subscription),
       headers: {
